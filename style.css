@@ -239,7 +239,7 @@ transform:scale(1.03);
 
 }
 
-.tagline{
+.tag{
 
 font-size:1.35rem;
 
@@ -250,6 +250,8 @@ max-width:720px;
 margin: 30px auto;
 
 color:#666;
+
+text-align: center;
 
 }
 

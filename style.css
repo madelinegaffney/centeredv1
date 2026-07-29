@@ -398,7 +398,8 @@ box-shadow:var(--shadowHover);
 .about-photo img{
 
 width:100%;
-
+max-width: 320px;
+border-radius:22px;
 display:block;
 
 }

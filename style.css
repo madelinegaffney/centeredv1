@@ -672,3 +672,23 @@ padding:40px 30px;
 }
 
 }
+
+/* ===== SERVICES PAGE ===== */
+
+.tagline{
+    font-size:1.3rem;
+    font-weight:300;
+    max-width:720px;
+    margin:30px auto;
+    color:#666;
+    text-align:center;
+}
+
+.service ul{
+    margin:20px 0 25px 40px;
+    padding-left:20px;
+}
+
+.service li{
+    margin-bottom:10px;
+}

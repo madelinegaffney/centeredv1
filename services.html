@@ -8,10 +8,11 @@
 
 <title>Services | Centered & Connected Therapy</title>
 
+<meta name="description" content="Emotionally Focused Couples Therapy, interracial couples therapy, and individual therapy with Madeline Gaffney, JD, M.Ed. in Virginia.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -22,8 +23,16 @@
 <header>
 
 <div class="logo">
-<a href="index.html">Centered & Connected Therapy</a>
+    <a href="index.html">
+        <img src="images/logo.png" alt="Centered & Connected Therapy" class="nav-logo">
+    </a>
 </div>
+
+<button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
 <nav>
 
@@ -41,16 +50,19 @@
 
 </header>
 
+<!-- ==========================
+     HERO
+=========================== -->
+
 <section class="hero">
 
 <h1>Services</h1>
 
-<p class="tagline">
-
-
-</p>
-
 </section>
+
+<!-- ==========================
+     CONTENT
+=========================== -->
 
 <section class="section">
 
@@ -59,9 +71,7 @@
 <h2>Emotionally Focused Couples Therapy</h2>
 
 <p>
-
 Relationships can become stuck in painful cycles of conflict, distance, or misunderstanding. Emotionally Focused Therapy (EFT) helps couples identify these patterns, better understand one another's emotional needs, and rebuild the secure connection that allows relationships to thrive.
-
 </p>
 
 </div>
@@ -71,9 +81,7 @@ Relationships can become stuck in painful cycles of conflict, distance, or misun
 <h2>Interracial Couples Therapy</h2>
 
 <p>
-
 Every relationship brings together two unique life experiences. Interracial couples often navigate additional layers of culture, identity, family expectations, and communication. Therapy provides a supportive space to explore these experiences together while strengthening trust, understanding, and emotional connection.
-
 </p>
 
 </div>
@@ -83,55 +91,36 @@ Every relationship brings together two unique life experiences. Interracial coup
 <h2>Individual Therapy</h2>
 
 <p>
-
 <strong>Sometimes the relationship that needs the most attention is the one you have with yourself.</strong>
-
 </p>
 
 <p>
-
 I work with adults experiencing:
-
 </p>
 
 <ul>
-
 <li>Anxiety</li>
-
 <li>Perfectionism</li>
-
 <li>Low self-esteem</li>
-
 <li>Burnout</li>
-
 <li>Relationship concerns</li>
-
 <li>Life transitions</li>
-
 </ul>
 
 <p>
-
 I would love to walk alongside you in self-exploration to help you build self-esteem so you can feel confident in your authentic self. Whether you're working through people-pleasing, navigating a career change, or simply feeling stuck, therapy can help you build a stronger foundation of self-trust.
-
 </p>
 
 <p>
-
 Together, we'll explore the patterns that may be keeping you stuck and help you create a life that feels more centered, connected, and authentic.
-
 </p>
 
 </div>
 
 <div class="quote">
-
 <p>
-
 Therapy isn't about having all the answers. It's about understanding your patterns, building awareness, and making intentional choices that align with the life you want to create.
-
 </p>
-
 </div>
 
 <div class="contact-box">
@@ -139,48 +128,63 @@ Therapy isn't about having all the answers. It's about understanding your patter
 <h2>Ready to Begin?</h2>
 
 <p>
-
 Whether you're seeking support as an individual or hoping to strengthen your relationship, I'd be honored to walk alongside you.
-
 </p>
 
 <a class="btn" href="mailto:madeline@centeredandconnectedtherapy.com">
-
 Contact Me
-
 </a>
 
 </div>
 
 </section>
 
+<!-- ==========================
+     FOOTER
+=========================== -->
+
 <footer>
 
 <p>
-
 Madeline Gaffney, JD, M.Ed., Resident in Counseling in Virginia
-
 </p>
 
 <p>
-
 <a href="mailto:madeline@centeredandconnectedtherapy.com">
-
 madeline@centeredandconnectedtherapy.com
-
 </a>
 
 &nbsp;&nbsp;|&nbsp;&nbsp;
 
 <a href="tel:2406304633">
-
 (240) 630-4633
-
 </a>
-
 </p>
 
 </footer>
+
+<script>
+
+const menuToggle = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+});
+
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        siteNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', false);
+        document.body.classList.remove('nav-open');
+    });
+});
+
+</script>
 
 </body>
 

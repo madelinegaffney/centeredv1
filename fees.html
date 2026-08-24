@@ -8,10 +8,11 @@
 
 <title>Fees & Payment | Centered & Connected Therapy</title>
 
+<meta name="description" content="Session fees, out-of-network benefits, and Good Faith Estimate information for therapy with Madeline Gaffney, JD, M.Ed. in Virginia.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -22,8 +23,16 @@
 <header>
 
 <div class="logo">
-<a href="index.html">Centered & Connected Therapy</a>
+    <a href="index.html">
+        <img src="images/logo.png" alt="Centered & Connected Therapy" class="nav-logo">
+    </a>
 </div>
+
+<button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
 <nav>
 
@@ -41,14 +50,19 @@
 
 </header>
 
+<!-- ==========================
+     HERO
+=========================== -->
+
 <section class="hero">
 
 <h1>Fees & Payment</h1>
 
-<p class="tagline">
-<p>
-
 </section>
+
+<!-- ==========================
+     CONTENT
+=========================== -->
 
 <section class="section">
 
@@ -57,19 +71,13 @@
 <h2>Session Fees</h2>
 
 <p>
-
 <strong>Individual Therapy (50 minutes)</strong><br>
-
 $175
-
 </p>
 
 <p>
-
 <strong>Couples Therapy (50 minutes)</strong><br>
-
 $175
-
 </p>
 
 </div>
@@ -79,31 +87,21 @@ $175
 <h2>Out-of-Network Benefits</h2>
 
 <p>
-
 Many clients are surprised to learn that they have out-of-network mental health benefits, which may significantly reduce the cost of therapy.
-
 </p>
 
 <p>
-
 To make the process simple, I partner with <strong>Thrizer</strong>. After entering your insurance information, Thrizer can estimate your reimbursement, submit claims on your behalf, and send your reimbursement directly to you.
-
 </p>
 
 <p>
-
 For clients who prefer an even simpler option, Thrizer also offers an optional service that allows eligible clients to pay only their estimated out-of-pocket cost at the time of each session while Thrizer waits for reimbursement from your insurance company. <em>(This optional service includes an additional fee through Thrizer.)</em>
-
 </p>
 
 <div class="quote">
-
 <p>
-
 My hope is to make using your out-of-network benefits as seamless and stress-free as possible.
-
 </p>
-
 </div>
 
 </div>
@@ -113,15 +111,11 @@ My hope is to make using your out-of-network benefits as seamless and stress-fre
 <h2>Good Faith Estimate</h2>
 
 <p>
-
 Under the No Surprises Act, healthcare providers are required to provide clients who are uninsured or choosing not to use insurance with a Good Faith Estimate of the expected cost of services.
-
 </p>
 
 <p>
-
 If you have any questions about fees, payment, or your out-of-network benefits, I'm always happy to help before your first appointment.
-
 </p>
 
 </div>
@@ -131,48 +125,63 @@ If you have any questions about fees, payment, or your out-of-network benefits, 
 <h2>Have Questions?</h2>
 
 <p>
-
 I'd be happy to answer any questions about fees, payment, or getting started.
-
 </p>
 
 <a class="btn" href="mailto:madeline@centeredandconnectedtherapy.com">
-
 Contact Me
-
 </a>
 
 </div>
 
 </section>
 
+<!-- ==========================
+     FOOTER
+=========================== -->
+
 <footer>
 
 <p>
-
 Madeline Gaffney, JD, M.Ed., Resident in Virginia<br>
-
 </p>
 
 <p>
-
 <a href="mailto:madeline@centeredandconnectedtherapy.com">
-
 madeline@centeredandconnectedtherapy.com
-
 </a>
 
 &nbsp;&nbsp;|&nbsp;&nbsp;
 
 <a href="tel:2406304633">
-
 (240) 630-4633
-
 </a>
-
 </p>
 
 </footer>
+
+<script>
+
+const menuToggle = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+});
+
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        siteNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', false);
+        document.body.classList.remove('nav-open');
+    });
+});
+
+</script>
 
 </body>
 

@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 
-<link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-      
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About | Centered & Connected Therapy</title>
+
+<meta name="description" content="Meet Madeline Gaffney, JD, M.Ed., a relationship-focused therapist in Virginia specializing in Emotionally Focused Couples Therapy and individual therapy.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -15,10 +23,17 @@
 <header>
 
 <div class="logo">
-    <a href="about.html">
-        Centered & Connected Therapy
+    <a href="index.html">
+        <img src="images/logo.png" alt="Centered & Connected Therapy" class="nav-logo">
     </a>
 </div>
+
+<button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
 <nav>
 
 <a href="index.html">Home</a>
@@ -35,100 +50,128 @@
 
 </header>
 
-<!-- About content -->
-
-</body>
-</html>
+<!-- ==========================
+     HERO
+=========================== -->
 
 <section class="hero">
-    <h1>About Me</h1>
-    
+
+<h1>About Me</h1>
+
 </section>
+
+<!-- ==========================
+     ABOUT CONTENT
+=========================== -->
 
 <section class="about-container">
 
-    <div class="about-photo">
-        <img src="images/headshot.jpg" alt="Madeline Gaffney">
-    </div>
+<div class="about-photo">
+    <img src="images/headshot.jpg" alt="Madeline Gaffney">
+</div>
 
-    <div class="about-text">
+<div class="about-text">
 
-        <h2>Hi, I'm Madeline Gaffney, JD, M.Ed.</h2>
+<h2>Hi, I'm Madeline Gaffney, JD, M.Ed.</h2>
 
-        <p>
-            I am passionate about helping people build stronger relationships with themselves and others.
-            Before becoming a therapist, I attended the University of Texas School of Law and practiced as a corporate attorney for four years.
-            Throughout my time as an attorney, I repeatedly found myself drawn to working with people rather than contracts.
-        </p>
+<p>
+I am passionate about helping people build stronger relationships with themselves and others.
+Before becoming a therapist, I attended the University of Texas School of Law and practiced as a corporate attorney for four years.
+Throughout my time as an attorney, I repeatedly found myself drawn to working with people rather than contracts.
+</p>
 
-        <p>
-            That realization led me back to school, where I earned my Master's degree in Couples, Marriage, and Family Counseling from the College of William & Mary.
-        </p>
+<p>
+That realization led me back to school, where I earned my Master's degree in Couples, Marriage, and Family Counseling from the College of William & Mary.
+</p>
 
-        <p>
-            Today, I work with individuals and couples who want to better understand themselves, strengthen their relationships, and create lasting change.
-            In session with me you can expect a person-centered approach with a focus on mindfulness and attachment.
-        </p>
+<p>
+Today, I work with individuals and couples who want to better understand themselves, strengthen their relationships, and create lasting change.
+In session with me you can expect a person-centered approach with a focus on mindfulness and attachment.
+</p>
 
-        <p>
-            I believe meaningful change begins with feeling understood.
-            My goal is to create a space where you can show up honestly and explore the experiences, relationships, and patterns that have shaped you.
-            Therapy isn't about having all the answers, it's about understanding patterns and building awareness so you can make intentional choices that move you toward the life you want to create.
-        </p>
+<p>
+I believe meaningful change begins with feeling understood.
+My goal is to create a space where you can show up honestly and explore the experiences, relationships, and patterns that have shaped you.
+Therapy isn't about having all the answers, it's about understanding patterns and building awareness so you can make intentional choices that move you toward the life you want to create.
+</p>
 
-        <p>
-            When I'm not working I enjoy hiking, singing, painting, and exploring other creative outlets.
-        </p>
+<p>
+When I'm not working I enjoy hiking, singing, painting, and exploring other creative outlets.
+</p>
 
-
-    </div>
+</div>
 
 </section>
 
+<!-- ==========================
+     CTA
+=========================== -->
+
 <section class="section">
+
 <div class="contact-box">
 
 <h2>Ready to Begin?</h2>
 
 <p>
-
 Whether you're seeking support as an individual or hoping to strengthen your relationship, I'd be honored to walk alongside you.
-
 </p>
 
 <a class="btn" href="mailto:madeline@centeredandconnectedtherapy.com">
-
 Contact Me
-
 </a>
 
 </div>
 
-</section> 
+</section>
+
+<!-- ==========================
+     FOOTER
+=========================== -->
 
 <footer>
+
 <p>
-
 Madeline Gaffney, JD, M.Ed., Resident in Counseling in Virginia
-
 </p>
 
 <p>
-
 <a href="mailto:madeline@centeredandconnectedtherapy.com">
-
 madeline@centeredandconnectedtherapy.com
-
 </a>
 
 &nbsp;&nbsp;|&nbsp;&nbsp;
 
 <a href="tel:2406304633">
-
 (240) 630-4633
-
 </a>
-
 </p>
 
 </footer>
+
+<script>
+
+const menuToggle = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+});
+
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        siteNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', false);
+        document.body.classList.remove('nav-open');
+    });
+});
+
+</script>
+
+</body>
+
+</html>

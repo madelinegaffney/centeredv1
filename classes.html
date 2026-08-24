@@ -8,10 +8,11 @@
 
 <title>Classes | Centered & Connected Therapy</title>
 
+<meta name="description" content="Upcoming workshops and educational classes on relationships, mindfulness, and emotional wellbeing with Madeline Gaffney, JD, M.Ed.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -22,8 +23,16 @@
 <header>
 
 <div class="logo">
-<a href="index.html">Centered & Connected Therapy</a>
+    <a href="index.html">
+        <img src="images/logo.png" alt="Centered & Connected Therapy" class="nav-logo">
+    </a>
 </div>
+
+<button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
 <nav>
 
@@ -41,13 +50,19 @@
 
 </header>
 
+<!-- ==========================
+     HERO
+=========================== -->
+
 <section class="hero">
 
 <h1>Classes & Workshops</h1>
 
-</p>
-
 </section>
+
+<!-- ==========================
+     CONTENT
+=========================== -->
 
 <section class="section">
 
@@ -56,36 +71,23 @@
 <h2>Coming Soon</h2>
 
 <p>
-
 I am currently developing workshops and educational classes designed to help individuals and couples deepen their understanding of themselves, strengthen their relationships, and build practical skills they can use in everyday life.
-
 </p>
 
 <p>
-
 Future topics may include:
-
 </p>
 
 <ul>
-
 <li>Building Secure Relationships</li>
-
 <li>Managing Anxiety & Perfectionism</li>
-
 <li>Communication Skills for Couples</li>
-
 <li>Mindfulness & Emotional Regulation</li>
-
 <li>Strengthening Self-Esteem & Self-Trust</li>
-
 </ul>
 
 <p>
-
 Whether you're looking to strengthen your relationship, better understand yourself, or simply continue growing, I hope these classes will provide a welcoming space to learn alongside others.
-
-
 </p>
 
 </div>
@@ -95,48 +97,63 @@ Whether you're looking to strengthen your relationship, better understand yourse
 <h2>Interested in Future Classes?</h2>
 
 <p>
-
 If you'd like to be notified when new workshops or classes become available, I'd love to hear from you.
-
 </p>
 
 <a class="btn" href="mailto:madeline@centeredandconnectedtherapy.com">
-
 Contact Me
-
 </a>
 
 </div>
 
 </section>
 
+<!-- ==========================
+     FOOTER
+=========================== -->
+
 <footer>
 
 <p>
-
 Madeline Gaffney, JD, M.Ed., Resident in Virginia<br>
-
 </p>
 
 <p>
-
 <a href="mailto:madeline@centeredandconnectedtherapy.com">
-
 madeline@centeredandconnectedtherapy.com
-
 </a>
 
 &nbsp;&nbsp;|&nbsp;&nbsp;
 
 <a href="tel:2406304633">
-
 (240) 630-4633
-
 </a>
-
 </p>
 
 </footer>
+
+<script>
+
+const menuToggle = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+});
+
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        siteNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', false);
+        document.body.classList.remove('nav-open');
+    });
+});
+
+</script>
 
 </body>
 

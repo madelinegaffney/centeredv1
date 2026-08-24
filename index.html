@@ -8,9 +8,12 @@
 
 <title>Centered & Connected Therapy</title>
 
+<meta name="description" content="Relationship-focused therapy for individuals and couples in Virginia. Emotionally Focused Couples Therapy, interracial couples therapy, and individual therapy with Madeline Gaffney, JD, M.Ed.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -21,9 +24,15 @@
 
 <div class="logo">
     <a href="index.html">
-        Centered & Connected Therapy
+        <img src="images/logo.png" alt="Centered & Connected Therapy" class="nav-logo">
     </a>
 </div>
+
+<button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
 <nav>
 
@@ -65,7 +74,7 @@ Relationship-focused therapy for individuals and couples in Virginia.
 
 </p>
 
-<a
+
 class="btn"
 href="mailto:madeline@centeredandconnectedtherapy.com">
 
@@ -172,7 +181,7 @@ How I Can Help
 </section>
 
 <!-- ==========================
-     HOME CTA
+     HOME CTA / CONTACT FORM
 =========================== -->
 
 <section class="section">
@@ -193,13 +202,24 @@ of life, I'd be honored to walk alongside you.
 
 </p>
 
-<a
-class="btn"
-href="mailto:madeline@centeredandconnectedtherapy.com">
+<form action="https://formspree.io/f/maewzkej" method="POST" class="contact-form">
 
-Contact Me
+    <input type="text" name="name" placeholder="Your Name" required>
 
-</a>
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <textarea name="message" placeholder="How can I help?" rows="5" required></textarea>
+
+    <button type="submit" class="btn">Send Message</button>
+
+</form>
+
+<p class="contact-alt">
+
+Prefer email? Reach me directly at
+<a href="mailto:madeline@centeredandconnectedtherapy.com">madeline@centeredandconnectedtherapy.com</a>
+
+</p>
 
 </div>
 
@@ -236,6 +256,29 @@ madeline@centeredandconnectedtherapy.com
 </p>
 
 </footer>
+
+<script>
+
+const menuToggle = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+});
+
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        siteNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', false);
+        document.body.classList.remove('nav-open');
+    });
+});
+
+</script>
 
 </body>
 
